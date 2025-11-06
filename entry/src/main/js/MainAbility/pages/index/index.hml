@@ -1,0 +1,28 @@
+<stack class="container">
+    <canvas ref="navigationCanvas" class="navigation-canvas" if="{{ hasSession }}"></canvas>
+
+    <text class="title">{{ appTitle }}</text>
+
+    <div class="no-session" if="{{ ! hasSession }}">
+        <text class="status-message">{{ statusMessage }}</text>
+    </div>
+
+    <div class="active-session" if="{{ hasSession }}">
+        <text class="timer">{{ elapsedTime }}</text>
+        <text class="north-label">N</text>
+
+        <text class="canvas-spacer"></text>
+
+        <text class="distance-value">{{ distanceText }}</text>
+    </div>
+
+    <text class="west-label" if="{{ hasSession }}">W</text>
+    <text class="east-label" if="{{ hasSession }}">E</text>
+    <text class="south-label" if="{{ hasSession }}">S</text>
+
+    <input class="btn-park" type="button" value="" onclick="parkHere" if="{{ ! hasSession }}"></input>
+    <text class="btn-park-text" if="{{ ! hasSession }}">Park Here</text>
+
+    <input class="btn-clear" type="button" value="" onclick="clearSession" if="{{ hasSession }}"></input>
+    <text class="btn-clear-text" if="{{ hasSession }}">Clear Session</text>
+</stack>

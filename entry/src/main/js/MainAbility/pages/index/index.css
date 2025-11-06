@@ -1,0 +1,148 @@
+.container {
+  width: 454px;
+  height: 454px;
+  background-color: black;
+}
+.title {
+  width: 454px;
+  height: 30px;
+  font-size: 24px;
+  color: deepskyblue;
+  text-align: center;
+  left: 0px;
+  top: 20px;
+}
+
+.no-session {
+  width: 380px;
+  height: 200px;
+  left: 37px;
+  top: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-message {
+  width: 380px;
+  height: 30px;
+  font-size: 16px;
+  color: darkgray;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-park {
+  width: 380px;
+  height: 300px;
+  background-color: deepskyblue;
+  border-radius: 100px;
+  left: 37px;
+  top: 350px;
+}
+
+.btn-park-text {
+  width: 380px;
+  height: 30px;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  left: 37px;
+  top: 385px;
+}
+
+.active-session {
+  width: 380px;
+  height: 295px;
+  left: 37px;
+  top: 60px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer {
+  width: 380px;
+  height: 45px;
+  font-size: 36px;
+  color: aqua;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.navigation-canvas {
+  width: 454px;
+  height: 454px;
+  background-color: black;
+}
+
+.canvas-spacer {
+  width: 380px;
+  height: 150px;
+  display: flex;
+}
+
+.north-label {
+  width: 380px;
+  height: 20px;
+  font-size: 16px;
+  color: darkgray;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.west-label {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  color: darkgray;
+  text-align: center;
+  left: 142px;
+  top: 185px;
+}
+
+.east-label {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  color: darkgray;
+  text-align: center;
+  left: 292px;
+  top: 185px;
+}
+
+.south-label {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  color: darkgray;
+  text-align: center;
+  left: 217px;
+  top: 260px;
+}
+
+.distance-value {
+  width: 380px;
+  height: 48px;
+  font-size: 42px;
+  color: white;
+  text-align: center;
+}
+
+.btn-clear {
+  width: 380px;
+  height: 300px;
+  background-color: indianred;
+  border-radius: 100px;
+  left: 37px;
+  top: 350px;
+}
+
+.btn-clear-text {
+  width: 380px;
+  height: 30px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  left: 37px;
+  top: 385px;
+}
