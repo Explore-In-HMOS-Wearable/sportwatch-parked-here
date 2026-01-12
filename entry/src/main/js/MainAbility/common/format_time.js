@@ -10,11 +10,11 @@ export function formatTime(seconds) {
     const secs = seconds % 60
 
     // Pad with zeros
-    const hh = hours < 10 ? '0' + hours : '' + hours
-    const mm = minutes < 10 ? '0' + minutes : '' + minutes
-    const ss = secs < 10 ? '0' + secs : '' + secs
+    const hh = hours < 10 ? `0${hours}` : `${hours}`
+    const mm = minutes < 10 ? `0${minutes}` : `${minutes}`
+    const ss = secs < 10 ? `0${secs}` : `${secs}`
 
-    return hh + ':' + mm + ':' + ss
+    return `${hh}:${mm}:${ss}`
 }
 
 export default {

@@ -33,7 +33,7 @@ export default {
         locationInterval: null,
 
         // Canvas context
-        canvasCtx: null,
+        canvasCtx: null
     },
 
     onInit() {
@@ -45,7 +45,7 @@ export default {
     },
 
     loadSession() {
-        var that = this
+        let that = this
 
         // Get park location if it exists
         Storage.get({
@@ -53,7 +53,7 @@ export default {
             success: function (data) {
                 if (data && data !== '') {
                     // Parse as 'Park|lat|lng'
-                    var parts = data.split('|')
+                    let parts = data.split('|')
                     that.parkLatitude = parts[1] - 0
                     that.parkLongitude = parts[2] - 0
 
@@ -69,7 +69,7 @@ export default {
 
                                 // Draw canvas after session loads successfully
                                 setTimeout(function () {
-                                    var canvas = that.$refs.navigationCanvas
+                                    let canvas = that.$refs.navigationCanvas
                                     if (canvas) {
                                         that.canvasCtx = canvas.getContext('2d')
                                         if (that.canvasCtx) {
@@ -95,8 +95,8 @@ export default {
 
     drawNavigationArrow(ctx, bearing) {
         // Canvas fullscreen in the background (454x454px)
-        var centerX = 227
-        var centerY = 195
+        let centerX = 227
+        let centerY = 195
 
         // Black background
         ctx.fillStyle = '#000000'
@@ -110,29 +110,29 @@ export default {
         ctx.stroke()
 
         // Arrow coordinates calculation based on bearing
-        var bearingRad = bearing * Math.PI / 180
-        var cosB = Math.cos(bearingRad)
-        var sinB = Math.sin(bearingRad)
+        let bearingRad = bearing * Math.PI / 180
+        let cosB = Math.cos(bearingRad)
+        let sinB = Math.sin(bearingRad)
 
         // Arrow shaft
         // Start point
-        var shaftStartX = centerX + (0 * cosB - (-20) * sinB)
-        var shaftStartY = centerY + (0 * sinB + (-20) * cosB)
+        let shaftStartX = centerX + (0 * cosB - (-20) * sinB)
+        let shaftStartY = centerY + (0 * sinB + (-20) * cosB)
         // End point
-        var shaftEndX = centerX + (0 * cosB - (-50) * sinB)
-        var shaftEndY = centerY + (0 * sinB + (-50) * cosB)
+        let shaftEndX = centerX + (0 * cosB - (-50) * sinB)
+        let shaftEndY = centerY + (0 * sinB + (-50) * cosB)
 
         // Arrowhead
-        var tipX = shaftEndX
-        var tipY = shaftEndY
+        let tipX = shaftEndX
+        let tipY = shaftEndY
 
         // Left wing, included rotation
-        var leftWingX = centerX + ((-8) * cosB - (-40) * sinB)
-        var leftWingY = centerY + ((-8) * sinB + (-40) * cosB)
+        let leftWingX = centerX + ((-8) * cosB - (-40) * sinB)
+        let leftWingY = centerY + ((-8) * sinB + (-40) * cosB)
 
         // Right wing, included rotation
-        var rightWingX = centerX + (8 * cosB - (-40) * sinB)
-        var rightWingY = centerY + (8 * sinB + (-40) * cosB)
+        let rightWingX = centerX + (8 * cosB - (-40) * sinB)
+        let rightWingY = centerY + (8 * sinB + (-40) * cosB)
 
         // Draw arrow shaft
         ctx.beginPath()
@@ -167,7 +167,7 @@ export default {
     },
 
     parkHere() {
-        var that = this
+        let that = this
         that.statusMessage = 'Getting Location...'
 
         Geolocation.getLocation({
@@ -177,7 +177,7 @@ export default {
                 that.parkStartTime = Math.floor(Date.now() / 1000)
 
                 // Save to storage
-                var locationData = 'Park|' + that.parkLatitude + '|' + that.parkLongitude
+                let locationData = `Park|${that.parkLatitude}|${that.parkLongitude}`
 
                 Storage.set({
                     key: 'loc_park',
@@ -188,7 +188,7 @@ export default {
                         // Save start time
                         Storage.set({
                             key: 'park_start',
-                            value: '' + that.parkStartTime,
+                            value: `${that.parkStartTime}`,
                             success: function () {
                                 that.hasSession = true
                                 that.statusMessage = 'Location saved'
@@ -201,7 +201,7 @@ export default {
 
                                 // Draw canvas after session start
                                 setTimeout(function () {
-                                    var canvas = that.$refs.navigationCanvas
+                                    let canvas = that.$refs.navigationCanvas
                                     if (canvas) {
                                         that.canvasCtx = canvas.getContext('2d')
                                         if (that.canvasCtx) {
@@ -232,7 +232,7 @@ export default {
     },
 
     startTracking() {
-        var that = this
+        let that = this
 
         // Start timer, updating every 250ms
         that.timerInterval = setInterval(function () {
@@ -248,13 +248,13 @@ export default {
             return
         }
 
-        var now = Math.floor(Date.now() / 1000)
-        var elapsed = now - this.parkStartTime
+        let now = Math.floor(Date.now() / 1000)
+        let elapsed = now - this.parkStartTime
         this.elapsedTime = formatTime(elapsed)
     },
 
     updateLocation() {
-        var that = this
+        let that = this
 
         Geolocation.getLocation({
             success: function (data) {
@@ -302,7 +302,7 @@ export default {
     },
 
     scheduleNextUpdate() {
-        var that = this
+        let that = this
 
         // Clear any timeout if exists
         if (that.locationInterval) {
@@ -334,7 +334,7 @@ export default {
     },
 
     clearSession() {
-        var that = this
+        let that = this
 
         // Clear storage
         Storage.delete({
