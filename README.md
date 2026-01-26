@@ -6,10 +6,10 @@ A parking location tracker with visual navigation for Huawei LiteOS wearable dev
 
 # Preview
 
-<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-  <div style="width: 25%;"> <img src="screenshots/1_lite_scaled.gif"/></div>
-  <div style="width: 25%;"> <img src="screenshots/2_lite.png"/></div>
-  <div style="width: 25%;"> <img src="screenshots/3_lite.png"/></div>
+<div>
+  <img src="screenshots/1_lite_scaled.gif" width="25%" />
+  <img src="screenshots/2_lite.png" width="25%" />
+  <img src="screenshots/3_lite.png" width="25%" />
 </div>
 
 # Use Cases
